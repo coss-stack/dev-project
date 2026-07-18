@@ -11,16 +11,16 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t notes-app .'
+                sh 'docker build -t dev-project .'
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                docker stop notes-app || true
-                docker rm notes-app || true
-                docker run -d -p 80:5000 --name notes-app notes-app
+                docker stop dev-project || true
+                docker rm dev-project || true
+                docker run -d -p 80:5000 --name dev-project dev-project
                 '''
             }
         }
