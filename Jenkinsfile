@@ -14,7 +14,7 @@ pipeline {
                 sh '''
                 docker stop dev-project || true
                 docker rm dev-project || true
-                docker run -d -p 80:5000 --name dev-project dev-project
+                docker run -d --name dev-project -p 80:5000 dev-project
                 '''
             }
         }
