@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'docker build -t dev-project .'
